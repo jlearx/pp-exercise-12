@@ -5,7 +5,7 @@ Created on Aug 29, 2017
 '''
 
 def NewList(oldlist):
-    newlist = []
+    newlist = oldlist[1:len(oldlist) - 1]
     return newlist
 
 if __name__ == '__main__':
@@ -17,8 +17,15 @@ if __name__ == '__main__':
         finish = listIn.find("]")
         
         if ((start >= 0) and (finish > 0) and (finish != start + 1)):
+            listIn = listIn[start + 1:finish]
+            listIn = listIn.replace(" ", "")
             listStr = listIn.split(",")
-            print(listStr)
+            oldlist = listStr
             break
     
-    print(NewList(oldlist))
+    newlist = NewList(oldlist)
+    
+    for s in newlist:
+        print(s),
+    
+    print("\n")
