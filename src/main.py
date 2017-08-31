@@ -8,10 +8,10 @@ def NewList(oldlist):
     newlist = oldlist[1:len(oldlist) - 1]
     return newlist
 
-if __name__ == '__main__':
-    oldlist = []
+def GetList():
+    numlist = []
     
-    while (len(oldlist) == 0):
+    while (len(numlist) == 0):
         listIn = input("Please enter a list of numbers inside []: ")
         start = listIn.find("[")
         finish = listIn.find("]")
@@ -20,9 +20,13 @@ if __name__ == '__main__':
             listIn = listIn[start + 1:finish]
             listIn = listIn.replace(" ", "")
             listStr = listIn.split(",")
-            oldlist = listStr
+            numlist = listStr
             break
-    
+        
+    return numlist
+
+if __name__ == '__main__':
+    oldlist = GetList()
     newlist = NewList(oldlist)
     length = len(newlist)
     
