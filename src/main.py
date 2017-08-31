@@ -24,8 +24,13 @@ if __name__ == '__main__':
             break
     
     newlist = NewList(oldlist)
+    length = len(newlist)
     
-    for s in newlist:
-        print(s),
+    print("Here is the new list:")
     
-    print("\n")
+    for i in range(0, length):
+        if (i < length - 1):
+            print(newlist[i], end=', ')
+        else:
+            print(newlist[i])
+    
